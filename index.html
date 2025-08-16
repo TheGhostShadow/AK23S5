@@ -54,7 +54,7 @@
     }
     .banner {
       max-width: 100%;
-      border-radius: 10px;
+      border-radius: 8px;
     }
     .title {
       font-size: 28px;
@@ -64,31 +64,68 @@
     .alerta {
       font-weight: bold;
       margin: 5px 0;
+      font-size: 17px;
     }
     .descricao {
       margin: 5px 0 15px;
-      font-size: 14px;
+      font-size: 15px;
     }
     .botao {
-      background-color: #00aaff;
-      color: white;
       padding: 15px 30px;
       border: none;
       border-radius: 8px;
       font-size: 18px;
+      font-weight: bold;
       cursor: pointer;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 10px;
       margin-top: 10px;
-    }
-    .botao:hover {
-      background-color: #008ecc;
+      background-color: #00aaff;
+      color: white;
+      transition: all 0.15s ease-out;
+      position: relative;
+      z-index: 1; 
     }
     .botao .icon {
       width: 24px;
       height: 24px;
+    }
+    .botao::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #00aaff;
+      border-radius: inherit; 
+      filter: blur(8px);
+      animation: pulso-fluido 2.1s infinite;
+    }
+    @keyframes pulso-fluido {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 0.6;
+      }
+      50% {
+        transform: scale(1.05);
+        opacity: 1;
+      }
+    }
+    .botao:hover {
+      background-color: #008ecc;
+    }
+    .botao:active {
+      background-color: #00c3ff;
+      transform: scale(0.95);
+      transition: 0s;
+    }
+    .botao:active::before {
+      animation: none;
+      opacity: 0;
     }
     .download-apps {
       margin-top: 20px;
@@ -109,9 +146,21 @@
       transform: scale(1.05);
     }
     .footer {
-      margin-top: 10px;
-      font-size: 14px;
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #333;
+      font-size: 13px;
+      color: #888;
+    }
+    .footer p {
+      margin: 4px 0;
+    }
+    .footer a {
       color: #aaa;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
     }
     #timer-numerico {
       font-size: 24px;
@@ -124,10 +173,10 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      margin: 20px 0;
+      margin: 10px 0;
     }
     .seta {
-      width: 30px;
+      width: 28px;
       height: auto;
     }
     .flip {
@@ -235,6 +284,11 @@
     </a>
   </div>
 
+  <footer class="footer">
+    <p>© 2025 PrivLeaksBR. Todos os direitos reservados.</p>
+    <p><a href="https://t.me/PrivLeaksBR01" target="_blank" rel="noopener noreferrer">Contato</a></p>
+  </footer>
+
   <script>
     let tempoRestante = 10 * 60;
     const timerEl = document.getElementById('timer-numerico');
@@ -253,7 +307,6 @@
     atualizarTimer();
     const intervalo = setInterval(atualizarTimer, 1000);
 
-    // FUNÇÃO DE VERIFICAÇÃO DE IDADE
     function entrarSite() {
       document.getElementById("verificacao-idade").style.display = "none";
       if (typeof fbq === 'function') {
@@ -268,9 +321,7 @@
       
       const urlDestino = 'https://t.me/PrivLeaksBRBOT?start=pressel';
 
-      setTimeout(function() {
-        window.location.href = urlDestino;
-      }, 400); 
+      window.open(urlDestino, '_blank');
     }
   </script>
 </body>
