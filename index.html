@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SITE SEGURO</title>
+  
+  <script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-xcod-sck
+    data-utmify-prevent-subids
+    async
+    defer
+  ></script>
+
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1756409664988540');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1756409664988540&ev=PageView&noscript=1"
+  /></noscript>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #0f0f0f, #1a1a1a, #0f0f0f);
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      z-index: -1;
+    }
+    .logo-wrapper {
+      text-align: center;
+      margin-bottom: -20px;
+      margin-top: -30px; 
+    }
+    .banner {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+      margin: 15px 0 5px;
+    }
+    .alerta {
+      font-weight: bold;
+      margin: 5px 0;
+    }
+    .descricao {
+      margin: 5px 0 15px;
+      font-size: 14px;
+    }
+    .botao {
+      background-color: #00aaff;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .botao:hover {
+      background-color: #008ecc;
+    }
+    .botao .icon {
+      width: 24px;
+      height: 24px;
+    }
+    .download-apps {
+      margin-top: 20px;
+      text-align: center;
+      color: white;
+      font-size: 14px;
+    }
+    .download-apps a {
+      text-decoration: none;
+    }
+    .download-apps .app-badge {
+      width: 160px;
+      height: auto;
+      margin: 10px;
+      transition: transform 0.2s ease;
+    }
+    .download-apps .app-badge:hover {
+      transform: scale(1.05);
+    }
+    .footer {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #aaa;
+    }
+    #timer-numerico {
+      font-size: 24px;
+      font-weight: bold;
+      color: #00aaff;
+      margin: 5px 0;
+    }
+    .timer-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .seta {
+      width: 30px;
+      height: auto;
+    }
+    .flip {
+      transform: scaleX(-1);
+    }
+    .pulsando {
+      animation: pulse 1.2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    #verificacao-idade {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .caixa {
+      background-color: white;
+      color: black;
+      padding: 30px 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 0 20px #000;
+    }
+    .caixa img {
+      max-width: 100px;
+      margin-bottom: 20px;
+    }
+    .caixa p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .botoes {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .botoes button {
+      padding: 12px 25px;
+      font-size: 14px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .botoes .sim {
+      background-color: #28a745;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="verificacao-idade">
+    <div class="caixa">
+      <img src="imagens/idade18.png" alt="18+">
+      <p>VOCÊ CONFIRMA SER MAIOR DE IDADE?</p>
+      <div class="botoes">
+        <button class="sim" onclick="entrarSite()">SOU MAIOR DE IDADE</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="logo-wrapper">
+    <img src="imagens/logo.png" alt="Logo Extra Pack" class="logo" width="200">
+  </div>
+  <div class="title">
+    O MELHOR <span style="color: #00aaff;">GRUPO VIP</span> do TELEGRAM!
+  </div>
+  <div class="descricao">
+    Chega de pagar caro em assinaturas das famosinhas!
+  </div>
+  <img src="imagens/banner.jpg" alt="Banner" class="banner">
+  <div class="alerta">ESSE GRUPO SERÁ FECHADO EM BREVE, ENTRE AGORA!</div>
+  <div class="timer-wrapper">
+    <img src="imagens/seta.png" class="seta pulsando">
+    <div id="timer-numerico">10:00</div>
+    <img src="imagens/seta.png" class="seta pulsando flip">
+  </div>
+
+  <a id="redirectButton" href="javascript:void(0);" onclick="redirecionarComPixel()" class="botao">
+    <img src="imagens/telegram-icon.png" alt="Telegram" class="icon">
+    ENTRE AGORA NO GRUPO
+  </a>
+
+  <div class="download-apps">
+    <p>Não tem telegram? Baixe o app:</p>
+    <a href="https://play.google.com/store/apps/details?id=org.telegram.messenger" target="_blank">
+      <img src="imagens/playstore.png" alt="Baixar no Google Play" class="app-badge">
+    </a>
+    <a href="https://apps.apple.com/app/telegram-messenger/id686449807" target="_blank">
+      <img src="imagens/appstore.png" alt="Baixar na App Store" class="app-badge">
+    </a>
+  </div>
+
+  <script>
+    let tempoRestante = 10 * 60;
+    const timerEl = document.getElementById('timer-numerico');
+    function atualizarTimer() {
+      const minutos = Math.floor(tempoRestante / 60);
+      const segundos = tempoRestante % 60;
+      timerEl.textContent =
+        (minutos < 10 ? '0' + minutos : minutos) + ':' +
+        (segundos < 10 ? '0' + segundos : segundos);
+      if (tempoRestante <= 0) {
+        clearInterval(intervalo);
+        timerEl.textContent = "TEMPO ESGOTADO!";
+      }
+      tempoRestante--;
+    }
+    atualizarTimer();
+    const intervalo = setInterval(atualizarTimer, 1000);
+
+    // FUNÇÃO DE VERIFICAÇÃO DE IDADE
+    function entrarSite() {
+      document.getElementById("verificacao-idade").style.display = "none";
+      if (typeof fbq === 'function') {
+        fbq('track', 'ViewContent');
+      }
+    }
+
+    function redirecionarComPixel() {
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead');
+      }
+      
+      const urlDestino = 'https://t.me/PrivLeaksBRBOT?start=pressel';
+
+      setTimeout(function() {
+        window.location.href = urlDestino;
+      }, 400); 
+    }
+  </script>
+</body>
+</html>
