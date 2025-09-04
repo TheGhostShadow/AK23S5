@@ -227,9 +227,16 @@
       margin-bottom: 0px;
     }
 
+    .texto-container {
+      width: 90%;
+      margin: 0px auto 10px auto;
+    }
+
     .caixa p {
       font-size: 16px;
-      margin-bottom: 20px;
+      margin-bottom: 3px;
+      margin-top: 0;
+      text-align: center;
     }
 
     .botoes {
@@ -269,8 +276,12 @@
   <div id="verificacao-idade">
     <div class="caixa">
       <img src="imagens/idade.png" alt="18+">
-      <p>Este site contém conteúdo destinado para maiores de 18 anos.</p>
-      <p><strong>Você confirma ser maior de idade?</strong></p>
+
+      <div class="texto-container">
+        <p>Este site contém conteúdo destinado para maiores de 18 anos.</p>
+        <p><strong>Você confirma ser maior de idade?</strong></p>
+      </div>
+
       <div class="botoes">
         <button class="sim" onclick="entrarSite()">SIM, CONFIRMO</button>
         <button class="nao" onclick="sairSite()">NÃO, SAIR</button>
