@@ -218,24 +218,29 @@
       border-radius: 10px;
       max-width: 400px;
       width: 90%;
-      text-align: center;
       box-shadow: 0 0 20px #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .caixa img {
       max-width: 100px;
-      margin-bottom: 0px;
+      margin-bottom: 10px;
     }
 
-    .texto-container {
-      width: 90%;
-      margin: 0 auto 5px auto;
-    }
-
-    .caixa p {
+    .aviso-idade {
+      margin: 0;
       font-size: 16px;
       text-align: center;
+      margin-bottom: 6px;
+    }
+
+    .confirmacao-idade {
       margin: 0;
+      font-size: 16px;
+      text-align: center;
+      margin-bottom: 10px;
     }
 
     .botoes {
@@ -276,12 +281,8 @@
     <div class="caixa">
       <img src="imagens/idade.png" alt="18+">
 
-      <div class="texto-container">
-        <p>
-          Este site contém conteúdo destinado para maiores de 18 anos.<br>
-          <strong>Você confirma ser maior de idade?</strong>
-        </p>
-      </div>
+      <p class="aviso-idade">Este site contém conteúdo destinado para maiores de 18 anos.</p>
+      <p class="confirmacao-idade"><strong>Você confirma ser maior de idade?</strong></p>
 
       <div class="botoes">
         <button class="sim" onclick="entrarSite()">SIM, CONFIRMO</button>
